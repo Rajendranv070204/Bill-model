@@ -1,0 +1,222 @@
+@font-face {
+    font-family: ibrand;
+    src: url(../img/ibrand.otf);
+}
+
+@font-face {
+    font-family: liter;
+    src: url(../img/Liter-Regular.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --deep-navy: #0A2342;
+    --gold: #FFD700;
+    --soft-dray: #F4F4F4;
+}
+
+body {
+    background-color: var(--deep-navy);
+    font-family: liter;
+}
+
+.section {
+    margin-top: 30px;
+    padding: 0 80px;
+    width: 100%;
+}
+
+.img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-bottom: 7px;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.title-txt {
+    font-size: 42px;
+    font-family: ibrand;
+    color: var(--soft-dray);
+    padding: 10px 0;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 0 10px;
+    margin-top: 5px;
+    /* border: 1px solid #F4F4F4; */
+}
+
+.box {
+    border: 1px solid var(--soft-dray);
+    border-radius: 8px;
+    padding: 15px;
+    /* border: 1px solid #fff; */
+}
+
+.left-box {
+    width: 600px;
+    height: 100%;
+
+}
+
+.right-box {
+    width: 600px;
+    height: auto;
+
+}
+
+.content {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 5px;
+    /* border: 1px solid #fff; */
+}
+
+.input-box {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    /* border: 1px solid #fff; */
+}
+
+.label {
+    font-size: 20px;
+    color: var(--soft-dray);
+}
+
+select,
+input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+}
+
+.btn-box-left {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding: 0 10px;
+    /* border: 1px solid #fff; */
+}
+
+.btn-box-right {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    /* justify-content: end; */
+    padding: 0 10px;
+    /* border: 1px solid #fff; */
+}
+
+.btn {
+    padding: 10px 20px;
+    font-weight: 600;
+    background-color: var(--gold);
+    border: 1px solid var(--gold);
+    border-radius: 5px;
+    color: var(--deep-navy);
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn:hover{
+    background-color: var(--deep-navy);
+    color: var(--gold);
+}
+
+.download-btn{
+    margin-top: 10px;
+}
+
+
+
+
+
+/* ------------------------------------------------------------------- */
+
+
+table {
+    width: 100%;
+    /* border-collapse: collapse; */
+    /* margin-top: 20px; */
+    border-radius: 8px;
+    /* border: 1px solid var(--soft-dray); */
+    padding: 5px;
+}
+
+
+th,
+td {
+    padding: 10px;
+    text-align: left;
+}
+
+td {
+    color: var(--soft-dray);
+}
+
+th,
+.total-row,
+.total-col {
+    background-color: #f4f4f4;
+    color: var(--deep-navy);
+}
+
+/* 
+Layout
+Header:
+
+Background: #0A2342 (Deep Navy)
+
+Text: #F4F4F4 (Soft Gray)
+
+Logo/Buttons: #FFD700 (Gold)
+
+Hero Section:
+
+Background: #0A2342 (Deep Navy)
+
+Heading: #FFD700 (Gold)
+
+Subtext: #F4F4F4 (Soft Gray)
+
+Button: #FFD700 (Gold) with #0A2342 (Deep Navy) text.
+
+Menu Section:
+
+Background: #F4F4F4 (Soft Gray)
+
+Text: #0A2342 (Deep Navy)
+
+Accents: #FFD700 (Gold)
+
+Footer:
+
+Background: #0A2342 (Deep Navy)
+
+Text: #F4F4F4 (Soft Gray)
+
+Links/Buttons: #FFD700 (Gold)
+*/

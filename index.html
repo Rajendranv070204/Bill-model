@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/img/thennai dhaba.png" type="image/x-icon">
+    <!-- CSS Style -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Thennai dhaba</title>
+</head>
+
+<body>
+    <section class="section">
+        <div class="title">
+            <img class="img" src="./assets/img/thennai dhaba.png" alt="Dhaba logo">
+            <h1 class="title-txt">Thennai dhaba</h1>
+        </div>
+        <div class="container">
+            <div class="left-box box">
+                <form id="billForm">
+                    <div class="content">
+                        <div class="input-box">
+                            <label class="label" for="category">Category :</label>
+                            <select id="category" required>
+                                <option value="" disabled selected>Choose Category</option>
+                                <option value="Rice">Rice</option>
+                                <option value="TandooriRotti">Tandoori Rotti</option>
+                                <option value="Gravy">Gravy</option>
+                                <option value="Starters">Starters</option>
+                                <option value="Soup">Soup</option>
+                                <option value="Biryani">Biryani</option>
+                                <option value="Egg">Egg</option>
+                                <option value="Tandoori">Tandoori</option>
+                                <option value="Soda">Soda</option>
+                            </select>
+                        </div>
+                        <div class="input-box">
+                            <label class="label" for="menu">Menu :</label>
+                            <select id="menu" name="menu" required>
+                                <option value="" disabled selected>Choose an Item</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="input-box">
+                            <label class="label" for="price">Price (per item) :</label>
+                            <input type="number" id="price" name="price" placeholder="Enter Price" required readonly>
+                        </div>
+                        <div class="input-box">
+                            <label class="label" for="quantity">Quantity :</label>
+                            <input type="number" id="quantity" name="quantity" placeholder="Enter Quantity" required>
+                        </div>
+                    </div>
+                    <div class="btn-box-left">
+                        <button type="submit" class="btn">Add to bill</button>
+                    </div>
+                </form>
+            </div>
+            <div class="right-box box">
+                <table id="billTable">
+                    <thead>
+                        <tr>
+                            <th>Thennai Dhaba</th>
+                            <th>9791481458</th>
+                            <th id="currentDate">Date</th>
+                        </tr>
+                        <tr>
+                            <th>Menu</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                    <tfoot>
+                        <tr class="total-row">
+                            <td class="total-col">Total</td>
+                            <td class="total-col" id="totalQuantity">0</td>
+                            <td class="total-col" id="totalPrice">₹0.00</td>
+                        </tr>
+                    </tfoot>
+                </table>
+                <div class="btn-box-right">
+                    <button class="btn download-btn" onclick="downloadTableAsText()">Downloading bill</button>
+
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+<script src="./assets/js/script.js"></script>
+</html>
