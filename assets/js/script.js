@@ -133,32 +133,43 @@ document.getElementById('billForm').addEventListener('submit', function (event) 
 
 function downloadTableAsText() {
     const table = document.getElementById('billTable');
-    const rows = table.querySelectorAll('tr');
-    let textContent = '';
-    const columnWidths = [18, 12, 10];
-    rows.forEach((row, index) => {
-        const cols = row.querySelectorAll('th, td');
-        const rowData = Array.from(cols)
-            .map((col, i) => col.innerText.padEnd(columnWidths[i], ' '))
-            .join('|');
-        textContent += rowData + '\n';
-        if (index === 0) {
-            const separator = columnWidths.map(width => '-'.repeat(width)).join('+');
-            textContent += separator + '\n';
-        }
-        if (index === 1) {
-            const separator = columnWidths.map(width => '-'.repeat(width)).join('+');
-            textContent += separator + '\n';
-        }
-    });
-    const blob = new Blob([textContent], { type: 'text/plain' });
-    const link = document.createElement('a');
-    link.href = URL.createObjectURL(blob);
-    link.download = 'BillTable.txt';
-    link.click();
+            let textContent = '';
+            const columnWidths = [18, 12, 10];
+
+            table.querySelectorAll('tr').forEach((row, index) => {
+                if (!row.classList.contains('total-row')) {
+                    const rowData = Array.from(row.cells)
+                        .map((col, i) => col.innerText.padEnd(columnWidths[i], ' '))
+                        .join('|');
+                    textContent += rowData + '\n';
+
+                    if (index === 0 || index === 1) {
+                        textContent += '-'.repeat(40) + '\n';
+                    }
+                }
+            });
+
+            textContent += '-'.repeat(40) + '\n';
+
+            const totalRow = document.querySelector('.total-row');
+            if (totalRow) {
+                const totalRowData = Array.from(totalRow.cells)
+                    .map((col, i) => col.innerText.padEnd(columnWidths[i], ' '))
+                    .join('|');
+
+                textContent += totalRowData + '\n';
+            }
+
+            textContent += '-'.repeat(40) + '\n';
+
+            const blob = new Blob([textContent], { type: 'text/plain' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'BillTable.txt';
+            link.click();
 }
 
-// Function to format the date as YYYY-MM-DD
+// Function to format the date as DD-MM-YYYY
 function formatDate(date) {
     const day = String(date.getDate()).padStart(2, '0');
     const month = String(date.getMonth() + 1).padStart(2, '0'); // Months are 0-based
